@@ -1,7 +1,12 @@
 import { Router } from 'express';
-import { singin } from '../controllers/auth.controller.js';
+import { singup, profile, login } from '../controllers/auth.controller.js';
+import verifyToken from '../controllers/verify.js';
 const router = Router();
 
-router.post('/singin', singin);
+router.post('/singup', singup);
+
+router.post('/login', login);
+
+router.get('/profile', verifyToken, profile);
 
 export default router;
