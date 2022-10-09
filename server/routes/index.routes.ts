@@ -1,8 +1,7 @@
 import { Router } from 'express';
+import { singin } from '../controllers/auth.controller.js';
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.status(200).json({status: 'OK'});
-});
+router.post('/singin', singin);
 
 export default router;

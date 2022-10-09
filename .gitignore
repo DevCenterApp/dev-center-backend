@@ -1,3 +1,8 @@
+# Folders
+
 node_modules
 dist
 client
+
+# Files
+.env

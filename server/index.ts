@@ -6,6 +6,7 @@ import http from 'http';
 import { Server as SocketServer } from 'socket.io';
 
 import { PORT } from './config.js';
+import './database.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -17,6 +18,8 @@ const io = new SocketServer(server, {
 
 // settings
 app.set('port', PORT);
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 // middlewares
 app.use(cors());
